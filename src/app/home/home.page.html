@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Asset Management
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-input style="background-color:gray" type="text" [(ngModel)] ="encodeText"> </ion-input>
+    <button>
+    <ion-button ion-button block (click) ="encode()">Encode</ion-button>
+    </button>
+  </div>
+  <div>
+    <button>
+      <ion-button color ="primary" ion-button block (click) ="scan()">Scan</ion-button>
+      </button>
+  </div>
+  <div *ngIf ="scannedData.text">
+    <label>Your Barcode is </label>
+    <br>
+    <span>{{scannedData.text}}</span>
+  </div>
+</ion-content>
